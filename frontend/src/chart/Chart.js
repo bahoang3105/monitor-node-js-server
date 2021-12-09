@@ -2,7 +2,6 @@ import React from 'react';
 import { ComposedChart, CartesianGrid,  } from 'recharts';
 
 const Chart = (props) => {
-
   return (
     <ComposedChart
       width={props.width}

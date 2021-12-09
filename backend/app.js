@@ -4,7 +4,6 @@ import cors from 'cors';
 import si from 'systeminformation';
 import osu from 'node-os-utils';
 import os from 'os';
-import net from 'net'
 
 const app = express();
 
@@ -67,7 +66,11 @@ const getCPU = async () => {
 const getNetwork = async () => {
   try {
     const network = await si.networkStats('*');
-    return network;
+    return network.map(net => ({
+      ...net,
+      rx_sec: Math.round(net.rx_sec / 1024 * 100) / 100,
+      tx_sec: Math.round(net.tx_sec / 1024 * 100) / 100,
+    }));
   } catch(e) {
     console.error(e);
   }
