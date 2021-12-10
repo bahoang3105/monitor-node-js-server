@@ -12,7 +12,6 @@ const DisksIO = (props) => {
   const wWait = Math.round(wWaitPercent*100) / 100 || 0;
   const tWait = Math.round(tWaitPercent*100) / 100 || 0;
 
-
   return (
     <div className='chart'>
       <div className='chart-header' id='cpu-chart' style={{ marginBottom: 22 }}>
@@ -66,7 +65,7 @@ const DisksIO = (props) => {
             </div>
             <div className='bar-chart'>
               <div style={{ backgroundColor: '#3fd142', color: '#444444', width: `${rIOSec*10 > 100 ? 100 : rIOSec*10}%`, minWidth: '10px', height: '100%', transition: '1s' }}></div>
-              <div>{rIOSec.toString()}</div>
+              <div style={{ color: '#555555' }}>{rIOSec.toString()}</div>
             </div>
           </div>
           <div className="all-drives-chart">
@@ -75,7 +74,7 @@ const DisksIO = (props) => {
             </div>
             <div className='bar-chart'>
               <div style={{ backgroundColor: '#ff9734', color: '#444444', width: `${wIOSec*10 > 100 ? 100 : wIOSec*10}%`, minWidth: '10px', transition: '1s' }}></div>
-              <div>{wIOSec.toString()}</div>
+              <div style={{ color: '#555555' }}>{wIOSec.toString()}</div>
             </div>
           </div>
           <div className="all-drives-chart">
@@ -84,7 +83,7 @@ const DisksIO = (props) => {
             </div>
             <div className='bar-chart'>
               <div style={{ backgroundColor: '#ff78ae', color: '#444444', width: `${tIOSec*10 > 100 ? 100 : tIOSec*10}%`, minWidth: '10px', height: '100%', transition: '1s' }}></div>
-              <div>{tIOSec.toString()}</div>
+              <div style={{ color: '#555555' }}>{tIOSec.toString()}</div>
             </div>
           </div>
           <div className="chart-child-title" style={{ marginLeft: 30, marginTop: 30 }}>
@@ -95,8 +94,8 @@ const DisksIO = (props) => {
               Read
             </div>
             <div className='bar-chart'>
-              <div style={{ backgroundColor: '#3fd142', color: '#444444', width: `${rWait*10 > 100 ? 100 : rWait*30}%`, minWidth: '10px', height: '100%', transition: '1s' }}></div>
-              <div>{rWait.toString()}%</div>
+              <div style={{ backgroundColor: '#3fd142', color: '#444444', width: `${rWait*10 > 100 ? 100 : rWait*30}%`, maxWidth: '100%', minWidth: '10px', height: '100%', transition: '1s' }}></div>
+              <div style={{ color: '#555555' }}>{rWait.toString()}%</div>
             </div>
           </div>
           <div className="all-drives-chart">
@@ -104,8 +103,8 @@ const DisksIO = (props) => {
               Write
             </div>
             <div className='bar-chart'>
-              <div style={{ backgroundColor: '#ff9734', color: '#444444', width: `${wWait*10 > 100 ? 100 : wWait*30}%`, minWidth: '10px', transition: '1s' }}></div>
-              <div>{wWait.toString()}%</div>
+              <div style={{ backgroundColor: '#ff9734', color: '#444444', width: `${wWait*10 > 100 ? 100 : wWait*30}%`, maxWidth: '100%', minWidth: '10px', transition: '1s' }}></div>
+              <div style={{ color: '#555555' }}>{wWait.toString()}%</div>
             </div>
           </div>
           <div className="all-drives-chart">
@@ -113,8 +112,8 @@ const DisksIO = (props) => {
               Total
             </div>
             <div className='bar-chart'>
-              <div style={{ backgroundColor: '#ff78ae', color: '#444444', width: `${tWait*10 > 100 ? 100 : tWait*30}%`, minWidth: '10px', height: '100%', transition: '1s' }}></div>
-              <div>{tWait.toString()}%</div>
+              <div style={{ backgroundColor: '#ff78ae', color: '#444444', width: `${tWait*10 > 100 ? 100 : tWait*30}%`, maxWidth: '100%', minWidth: '10px', height: '100%', transition: '1s' }}></div>
+              <div style={{ color: '#555555' }}>{tWait.toString()}%</div>
             </div>
           </div>
         </div>
