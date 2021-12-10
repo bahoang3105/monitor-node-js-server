@@ -33,7 +33,12 @@ const getTemp = async () => {
 const getDisksIO = async () => {
   try {
     const disksIO = await si.disksIO();
-    return disksIO;
+    return {
+      ...disksIO,
+      tIO_sec: Math.round(disksIO.tIO_sec * 100) / 100,
+      rIO_sec: Math.round(disksIO.rIO_sec * 100) / 100,
+      wIO_sec: Math.round(disksIO.wIO_sec * 100) / 100,
+    };
   } catch(e) {
     console.log(e);
   }

@@ -88,13 +88,14 @@
 
 .disks-io-charts {
   display: grid;
-  grid-template-columns: 32% 32% 32%;
-  column-gap: 1%;
+  grid-template-columns: 49% 49%;
+  column-gap: 1% black;
+  margin-left: 15px;
 }
 
 .all-drives-chart {
   display: grid;
-  grid-template-columns: 23% 73%;
+  grid-template-columns: 18% 78%;
   column-gap: 4%;
   margin: 10px;
 }
@@ -108,10 +109,10 @@
   font-size: 20px;
   color: #498bc5;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
-.all-drives-cahrt-title {
+.all-drives-chart-title {
   color: #6b7389;
   font-weight: 600;
 }
@@ -124,4 +125,11 @@
 
 .text-center {
   text-align: center;
+}
+
+.bar-chart {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 85% 13%;
+  column-gap: 2%;
 }

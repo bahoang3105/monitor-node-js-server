@@ -87,7 +87,7 @@ const Network = ({ data, formatTime, ...props }) => {
       </div>
       <Chart data={netstat.filter(net => net.iface === iFaces[selectedIFace])} width={props.width * 35 / 100 - 60} height={props.height * 40 / 100 - 100 }>
         <XAxis dataKey="name" label={{ value: 'Time', style: { fontSize: '15' }, position: 'insideBottomRight', offset: 0, dy: 10 }} />
-        <YAxis label={{ value: '(KB/s)', angle: -90, position: 'insideLeft', style: {textAnchor: 'middle'}, dx: 15 }}/>
+        <YAxis label={{ value: '(KB/s)', angle: -90, position: 'insideLeft', style: { textAnchor: 'middle' }, dx: 15 }}/>
         <Tooltip />
         <Legend />
         <Line
